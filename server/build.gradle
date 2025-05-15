@@ -1,0 +1,27 @@
+plugins {
+    id 'java-library'
+    // TODO: Is this a war-project, or is it more used like a java-library?
+    //       The presence of an 'api' configuration points to the latter.
+}
+
+group = parent.group
+
+dependencies {
+    api lib.guava
+    api lib.icu4j
+    api lib.jackson
+    api lib.slf4j
+    api lib.spring_core
+    api lib.spring_web
+    api lib.spring_webmvc
+    api project(':rdap-core')
+    compileOnly lib.servlet_api
+
+    testImplementation "org.skyscreamer:jsonassert:1.5.1"
+    testImplementation lib.joda_time
+    testImplementation lib.jsonpath
+    testImplementation lib.junit
+    testImplementation lib.mockito
+    testImplementation lib.servlet_api
+    testImplementation lib.spring_test
+}

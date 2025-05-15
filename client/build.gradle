@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = parent.group
+
+application {
+    mainClassName = 'be.dnsbelgium.rdap.client.RDAPCLI'
+    applicationName = 'rdap'
+}
+
+dependencies {
+    implementation "commons-cli:commons-cli:1.2"
+    implementation "org.apache.httpcomponents:httpclient:4.3.1"
+    implementation "org.yaml:snakeyaml:2.2"
+    implementation lib.jackson
+    implementation lib.slf4j
+    implementation project(':rdap-core')
+
+    testImplementation lib.junit
+}

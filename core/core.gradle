@@ -1,6 +1,0 @@
-apply plugin: 'groovy'
-
-dependencies {
-  api lib.jackson, lib.slf4j, lib.guava, lib.joda_time, lib.commons_lang, lib.icu4j
-  testImplementation lib.junit, lib.groovy, lib.mockito
-}

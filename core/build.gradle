@@ -1,0 +1,20 @@
+plugins {
+    id 'java-library'
+    id 'jacoco'
+    id 'groovy'
+}
+
+group = parent.group
+
+dependencies {
+    api lib.commons_lang
+    api lib.guava
+    api lib.icu4j
+    api lib.jackson
+    api lib.joda_time
+    api lib.slf4j
+
+    testImplementation lib.groovy
+    testImplementation lib.junit
+    testImplementation lib.mockito
+}
