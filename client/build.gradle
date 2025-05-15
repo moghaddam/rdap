@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'application'
+    id 'com.autonomousapps.dependency-analysis'
 }
 
 group = parent.group
@@ -15,6 +16,7 @@ dependencies {
 
     implementation libs.commons.cli
     implementation libs.httpcomponents.httpclient
+    implementation libs.httpcomponents.httpcore
     implementation libs.jackson.core
     implementation libs.jackson.databind
     implementation libs.slf4j

@@ -2,27 +2,40 @@ plugins {
     id 'java-library'
     // TODO: Is this a war-project, or is it more used like a java-library?
     //       The presence of an 'api' configuration points to the latter.
+    id 'com.autonomousapps.dependency-analysis'
 }
 
 group = parent.group
 
 dependencies {
-    api libs.guava
-    api libs.icu4j
-    api libs.jackson.core
     api libs.jackson.databind
-    api libs.slf4j
-    api libs.spring.core
+    api libs.spring.beans
+    api libs.spring.context
     api libs.spring.web
     api libs.spring.webmvc
     api project(':rdap-core')
     compileOnly libs.servletApi
+    implementation libs.icu4j
+    implementation libs.slf4j
+    implementation libs.spring.core
 
+    testImplementation libs.guava
+    testImplementation libs.hamcrest.core
     testImplementation libs.jodaTime
-    testImplementation libs.jsonPath
-    testImplementation libs.jsonassert
     testImplementation libs.junit
     testImplementation libs.mockito
     testImplementation libs.servletApi
     testImplementation libs.spring.test
+
+    components {
+        // "spring-test" doesn't declare a dependency on json-path and json-assert, so we add it here
+        withModule(libs.spring.test.get().module) {
+            withVariant('runtimeElements') {
+                withDependencies {
+                    add(libs.jsonPath.get().with { "${it.module}:${it.version}" })
+                    add(libs.jsonassert.get().with { "${it.module}:${it.version}" })
+                }
+            }
+        }
+    }
 }

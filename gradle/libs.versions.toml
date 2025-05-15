@@ -7,8 +7,11 @@ commons-cli = { module = 'commons-cli:commons-cli', version = '1.9.0' }
 commons_lang = { module = 'org.apache.commons:commons-lang3', version = '3.17.0' }
 groovy = { module = 'org.codehaus.groovy:groovy', version = '3.0.24' }
 guava = { module = 'com.google.guava:guava', version = '33.4.8-jre' }
+hamcrest_core = { module = 'org.hamcrest:hamcrest-core', version = '1.3' }
 httpcomponents_httpclient = { module = 'org.apache.httpcomponents:httpclient', version = '4.5.14' }
+httpcomponents_httpcore = { module = 'org.apache.httpcomponents:httpcore', version = '4.4.16' }
 icu4j = { module = 'com.ibm.icu:icu4j', version = '77.1' }
+jackson_annotations = { module = 'com.fasterxml.jackson.core:jackson-annotations', version.ref = 'jackson' }
 jackson_core = { module = 'com.fasterxml.jackson.core:jackson-core', version.ref = 'jackson' }
 jackson_databind = { module = 'com.fasterxml.jackson.core:jackson-databind', version.ref = 'jackson' }
 jodaTime = { module = 'joda-time:joda-time', version = '2.14.0' }
@@ -19,7 +22,12 @@ mockito = { module = 'org.mockito:mockito-core', version = '5.17.0' }
 servletApi = { module = 'jakarta.servlet:jakarta.servlet-api', version = '6.0.0' }
 slf4j = { module = 'org.slf4j:slf4j-api', version = '2.0.17' }
 snakeyaml = { module = 'org.yaml:snakeyaml', version = '2.4' }
+spring_beans = { module = 'org.springframework:spring-beans', version.ref = 'spring' }
+spring_context = { module = 'org.springframework:spring-context', version.ref = 'spring' }
 spring_core = { module = 'org.springframework:spring-core', version.ref = 'spring' }
 spring_test = { module = 'org.springframework:spring-test', version.ref = 'spring' }
 spring_web = { module = 'org.springframework:spring-web', version.ref = 'spring' }
 spring_webmvc = { module = 'org.springframework:spring-webmvc', version.ref = 'spring' }
+
+[plugins]
+dependencyAnalysis = { id = 'com.autonomousapps.dependency-analysis', version = '2.17.0' }
