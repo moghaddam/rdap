@@ -7,14 +7,15 @@ plugins {
 group = parent.group
 
 dependencies {
-    api lib.commons_lang
-    api lib.guava
-    api lib.icu4j
-    api lib.jackson
-    api lib.joda_time
-    api lib.slf4j
+    api libs.commons.lang
+    api libs.guava
+    api libs.icu4j
+    api libs.jackson.core
+    api libs.jackson.databind
+    api libs.jodaTime
+    api libs.slf4j
 
-    testImplementation lib.groovy
-    testImplementation lib.junit
-    testImplementation lib.mockito
+    testImplementation libs.groovy
+    testImplementation libs.junit
+    testImplementation libs.mockito
 }

@@ -7,21 +7,22 @@ plugins {
 group = parent.group
 
 dependencies {
-    api lib.guava
-    api lib.icu4j
-    api lib.jackson
-    api lib.slf4j
-    api lib.spring_core
-    api lib.spring_web
-    api lib.spring_webmvc
+    api libs.guava
+    api libs.icu4j
+    api libs.jackson.core
+    api libs.jackson.databind
+    api libs.slf4j
+    api libs.spring.core
+    api libs.spring.web
+    api libs.spring.webmvc
     api project(':rdap-core')
-    compileOnly lib.servlet_api
+    compileOnly libs.servletApi
 
-    testImplementation "org.skyscreamer:jsonassert:1.5.1"
-    testImplementation lib.joda_time
-    testImplementation lib.jsonpath
-    testImplementation lib.junit
-    testImplementation lib.mockito
-    testImplementation lib.servlet_api
-    testImplementation lib.spring_test
+    testImplementation libs.jodaTime
+    testImplementation libs.jsonPath
+    testImplementation libs.jsonassert
+    testImplementation libs.junit
+    testImplementation libs.mockito
+    testImplementation libs.servletApi
+    testImplementation libs.spring.test
 }

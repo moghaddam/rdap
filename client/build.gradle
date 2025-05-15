@@ -11,12 +11,14 @@ application {
 }
 
 dependencies {
-    implementation "commons-cli:commons-cli:1.2"
-    implementation "org.apache.httpcomponents:httpclient:4.3.1"
-    implementation "org.yaml:snakeyaml:2.2"
-    implementation lib.jackson
-    implementation lib.slf4j
     implementation project(':rdap-core')
 
-    testImplementation lib.junit
+    implementation libs.commons.cli
+    implementation libs.httpcomponents.httpclient
+    implementation libs.jackson.core
+    implementation libs.jackson.databind
+    implementation libs.slf4j
+    implementation libs.snakeyaml
+
+    testImplementation libs.junit
 }
