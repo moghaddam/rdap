@@ -1,0 +1,23 @@
+plugins {
+    id 'java-library'
+    id 'jacoco'
+    id 'groovy'
+    id 'com.autonomousapps.dependency-analysis'
+}
+
+group = parent.group
+
+dependencies {
+    api libs.icu4j
+    api libs.jackson.annotations
+    api libs.jackson.core
+    api libs.jackson.databind
+    api libs.jodaTime
+    api libs.slf4j
+    implementation libs.commons.lang
+    implementation libs.guava
+
+    testImplementation libs.groovy
+    testImplementation libs.junit
+    testImplementation libs.mockito
+}

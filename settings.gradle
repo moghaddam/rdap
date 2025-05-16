@@ -1,8 +1,26 @@
-include 'core', 'client', 'server'
+pluginManagement {
+    repositories {
+        maven {
+            url = "$artifactoryBaseUrl/plugins-release"
+        }
+    }
+}
 
-rootProject.name = 'rdap'
+dependencyResolutionManagement {
+    repositories {
+        mavenLocal()
+        maven {
+            url = "$artifactoryBaseUrl/libs-release"
+        }
+    }
+    repositoriesMode = RepositoriesMode.PREFER_SETTINGS
+}
 
-rootProject.children.each { 
-  it.buildFileName = it.name + '.gradle'
-  it.name = rootProject.name + '-' + it.name
-} 
+include 'core'
+include 'client'
+include 'server'
+
+project(':').name = 'rdap'
+project(':core').name = 'rdap-core'
+project(':client').name = 'rdap-client'
+project(':server').name = 'rdap-server'

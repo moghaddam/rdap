@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.autonomousapps.dependency-analysis'
+}
+
+group = parent.group
+
+application {
+    mainClassName = 'be.dnsbelgium.rdap.client.RDAPCLI'
+    applicationName = 'rdap'
+}
+
+dependencies {
+    implementation project(':rdap-core')
+
+    implementation libs.commons.cli
+    implementation libs.httpcomponents.httpclient
+    implementation libs.httpcomponents.httpcore
+    implementation libs.jackson.core
+    implementation libs.jackson.databind
+    implementation libs.slf4j
+    implementation libs.snakeyaml
+
+    testImplementation libs.junit
+}
