@@ -1,5 +1,13 @@
 # RDAP server library
 
+## IMPORTANT
+This library is a fork of the original project https://github.com/DNSBelgium/rdap. As that project is not 
+actively maintained and is missing some regulatory requirements, we decided to fork it and maintain it ourselves. If you 
+are going to update this, you should always ensure that the new version is compatible with the original project. By 
+doing so, we could switch to the original project if they implement the recent requirements, and we would not need to
+maintain this anymore.
+
+
 This java library makes it very easy to build an RDAP server that talks with your registry back-end.
 
 # Features

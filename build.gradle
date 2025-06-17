@@ -85,20 +85,15 @@ subprojects {
 
     publishing {
         repositories {
-//            maven {
-//                name = 'localFileRepo'
-//                url = "file://${buildDir}/repo"
-//            }
-
             maven {
-                def releasesRepoUrl = 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
-                def snapshotsRepoUrl = 'https://oss.sonatype.org/content/repositories/snapshots/'
+                def releasesRepoUrl = 'https://repository.env.java-cph3.one.com/artifactory/libs-release-local/'
+                def snapshotsRepoUrl = 'https://repository.env.java-cph3.one.com/artifactory/libs-snapshot-local//'
 
-                name = 'sonatype'
+                name = 'artifactory'
                 url = version.endsWith('SNAPSHOT')  ? snapshotsRepoUrl : releasesRepoUrl
                 credentials {
-                    username = sonatype_username
-                    password = sonatype_password
+                    username = artifactoryUsername
+                    password = artifactoryPassword
                 }
             }
 
