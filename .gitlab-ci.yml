@@ -1,0 +1,12 @@
+include:
+  - project: 'javadev/build/pipeline-configurations'
+    ref: 'v5'
+    file: 'gradle-publish.yml'
+
+variables:
+  GRADLE_VERSION: '7.6.1'
+
+sonarqube:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $RUN_SONARQUBE'
+    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
