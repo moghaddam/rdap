@@ -3,6 +3,7 @@ plugins {
     id 'jacoco'
     id 'groovy'
     id 'com.autonomousapps.dependency-analysis'
+    alias(libs.plugins.publish)
 }
 
 group = parent.group

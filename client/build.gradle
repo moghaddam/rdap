@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'application'
     id 'com.autonomousapps.dependency-analysis'
+    alias(libs.plugins.publish)
 }
 
 group = parent.group

@@ -3,6 +3,7 @@ plugins {
     // TODO: Is this a war-project, or is it more used like a java-library?
     //       The presence of an 'api' configuration points to the latter.
     id 'com.autonomousapps.dependency-analysis'
+    alias(libs.plugins.publish)
 }
 
 group = parent.group

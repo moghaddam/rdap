@@ -1,6 +1,8 @@
 plugins {
     id 'base'
     alias(libs.plugins.dependencyAnalysis)
+    alias(libs.plugins.testReporting)
+    alias(libs.plugins.publish)
 }
 
 group = 'be.dnsbelgium'

@@ -1,4 +1,5 @@
 [versions]
+oneComBuildPlugins = '1.5.1'
 jackson = '2.15.3'
 spring = '6.0.13'
 
@@ -31,3 +32,5 @@ spring_webmvc = { module = 'org.springframework:spring-webmvc', version.ref = 's
 
 [plugins]
 dependencyAnalysis = { id = 'com.autonomousapps.dependency-analysis', version = '2.17.0' }
+publish = { id = 'com.one.build.publish', version.ref = 'oneComBuildPlugins' }
+testReporting = { id = 'one.group.build.test-reporting', version.ref = 'oneComBuildPlugins' }
