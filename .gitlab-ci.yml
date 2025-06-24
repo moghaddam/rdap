@@ -4,7 +4,7 @@ include:
     file: 'gradle-publish.yml'
 
 variables:
-  GRADLE_VERSION: '7.6.1'
+  GRADLE_VERSION: '8.1.1'
 
 sonarqube:
   rules:
